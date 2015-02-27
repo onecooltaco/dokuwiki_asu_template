@@ -28,8 +28,24 @@
  *
  * @see https://hub.asu.edu/brand-hq/brand-standards/color-palette
  */
+
+/******************************************************************************
+ ******** Most basic styles                                        ************
+ ******** Originally based on starter template's basic.css         ************
+ ******** Have a look at http://j.mp/eq8zSo for more information   ************
+ ******************************************************************************/
+html,
+body {
+    padding: 0;
+    color: __text__;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: scroll;
+    background-color: transparent;
 }
 
 body {
@@ -38,6 +54,7 @@ body {
   font-size: 16px;
   font-weight: 200;
   line-height: 1.44;
+  margin: 0 auto;
 }
 @media (min-width: 1200px) {
   body {
@@ -45,6 +62,104 @@ body {
   }
 }
 
+h1, h1 a,
+h2, h2 a,
+h3, h3 a,
+h4, h4 a,
+h5, h5 a,
+h6, h6 a {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* same font stack should be used for ".dokuwiki div.toc div.tocheader" */
+    font-weight: normal;
+    color: __text__;
+    background-color: inherit;
+    line-height: 1.4em;
+    text-align: left;
+    border: none;
+    padding: 0;
+    clear: left; /* ideally 'both', but problems with toc */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0.5em 0 0 5px;
+    margin: 1.3em auto 0.1em 0 !important;
+    /* padding-left should be geared to margin-left of div.level1-5,
+       .dokuwiki div.diffoptions and .dokuwiki table.diff */
+}
+@media (min-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    margin-top: 0;
+  }
+}
+
+h1 {
+    font-size: 1.571em; /* 22px, base 14px (see ".dokuwiki") */
+    margin: 0 0 0.444em;
+}
+h2 {
+    font-size: 1.429em; /* 20px, base 14px (see ".dokuwiki") */
+    margin: 0 0 0.666em;
+}
+h3 {
+    font-size: 1.286em; /* 18px, base 14px (see ".dokuwiki") */
+    margin: 0 0 0.888em;
+}
+h4 {
+    font-size: 1.143em; /* 16px, base 14px (see ".dokuwiki") */
+    margin: 0 0 1.0em;
+}
+h5,
+h6 {
+    font-size: 1em; /* 14px, base 14px (see ".dokuwiki") */
+    margin: 0 0 1.1428em;
+}
+.dokuwiki div.page h1:first-child, /* remove top margin from headlines when there is no text above */
+.dokuwiki div.page h2:first-child,
+.dokuwiki div.page h3:first-child {
+    margin-top: 0 !important;
+}
+
+/* blog posting and sidebar block headlines */
+.dokuwiki .hspec {
+    background: transparent url(images/headline_bg.gif) repeat-y scroll left center;
+    padding: 0.4em 0.5em 0.4em 20px !important;
+    color: __text__;
+}
+.dokuwiki .hspec a,
+.dokuwiki .hspec a:visited,
+.dokuwiki .hspec a:hover {
+    color: __text__;
+}
+caption,
+legend {
+    background-color: inherit;
+    padding: 0;
+    line-height: 1.2em;
+    font-family: inherit;
+    font-weight: normal;
+    color: __text__;
+    clear: none;
+}
+legend {
+    text-align: left; /* needed for webkit browsers */
+}
+
+####
 a {
   border-bottom: 1px dotted #903;
   color: #903;
@@ -92,172 +207,6 @@ hr {
   margin-top: 24px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  color: black;
-  font-family: inherit;
-  font-weight: normal;
-}
-.sidebar-nav > h1, .panel-body > h1, .sidebar-nav >
-h2, .panel-body >
-h2, .sidebar-nav >
-h3, .panel-body >
-h3, .sidebar-nav >
-h4, .panel-body >
-h4, .sidebar-nav >
-h5, .panel-body >
-h5, .sidebar-nav >
-h6, .panel-body >
-h6, .sidebar-nav >
-.h1, .panel-body >
-.h1, .sidebar-nav >
-.h2, .panel-body >
-.h2, .sidebar-nav >
-.h3, .panel-body >
-.h3, .sidebar-nav >
-.h4, .panel-body >
-.h4, .sidebar-nav >
-.h5, .panel-body >
-.h5, .sidebar-nav >
-.h6, .panel-body >
-.h6 {
-  margin-top: 0;
-}
-@media (min-width: 768px) {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6 {
-    margin-top: 0;
-  }
-}
-
-h1,
-.h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 48px;
-  margin-top: 48px;
-}
-@media (max-width: 767px) {
-  h1,
-  .h1 {
-    font-size: 40px;
-  }
-}
-
-h2,
-h3,
-.h2,
-.h3 {
-  line-height: 1.44;
-  margin-bottom: 24px;
-  margin-top: 48px;
-}
-
-h4,
-.h4 {
-  color: black;
-  font-size: 21px;
-  line-height: 1.44;
-  margin-bottom: 24px;
-  margin-top: 24px;
-}
-
-h5,
-.h5 {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 24px;
-  margin-bottom: 0;
-  margin-top: 24px;
-}
-
-h6,
-.h6 {
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 200;
-  line-height: 24px;
-  margin-bottom: 0;
-  margin-top: 24px;
-}
-
-h1 small,
-h1 .small,
-h2 small,
-h2 .small,
-h3 small,
-h3 .small,
-.h1 small,
-.h1 .small,
-.h2 small,
-.h2 .small,
-.h3 small,
-.h3 .small {
-  color: #777;
-  font-size: 65%;
-  font-weight: normal;
-  line-height: 1;
-}
-
-h4 small,
-h4 .small,
-h5 small,
-h5 .small,
-h6 small,
-h6 .small,
-.h4 small,
-.h4 .small,
-.h5 small,
-.h5 .small,
-.h6 small,
-.h6 .small {
-  color: #777;
-  font-size: 75%;
-  font-weight: normal;
-  line-height: 1;
-}
-
-h2,
-.h2 {
-  font-size: 36px;
-}
-@media (max-width: 767px) {
-  h2,
-  .h2 {
-    font-size: 28px;
-  }
-}
-
-h3,
-.h3 {
-  font-size: 24px;
-}
-@media (max-width: 767px) {
-  h3,
-  .h3 {
-    font-size: 20px;
-  }
-}
 
 p {
   font-weight: 200;
