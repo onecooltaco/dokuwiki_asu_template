@@ -159,7 +159,114 @@ legend {
     text-align: left; /* needed for webkit browsers */
 }
 
-####
+/* basic margins and paddings */
+p,
+ul,
+ol,
+dl,
+pre,
+table,
+hr,
+blockquote,
+fieldset,
+address {
+    margin: 0 0 1.4em 0;
+    padding: 0;
+}
+div {
+    margin: 0;
+    padding: 0;
+}
+p {
+  font-weight: 200;
+  line-height: 24px;
+  margin: 0 0 24px;
+  max-width: 800px;
+}
+p.text-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* lists */
+ul,
+ol {
+    padding: 0 0 0 1.5em;
+}
+li,
+dd {
+    padding: 0;
+    margin: 0 0 0 1.5em;
+}
+dt {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+li ul,
+li ol,
+li dl,
+dl ul,
+dl ol,
+dl dl {
+    margin-bottom: 0;
+    padding: 0;
+}
+li li {
+    font-size: 100%;
+}
+ul             { list-style: disc outside; }
+ol             { list-style: decimal outside; }
+ol ol          { list-style-type: lower-alpha; }
+ol ol ol       { list-style-type: upper-roman; }
+ol ol ol ol    { list-style-type: upper-alpha; }
+ol ol ol ol ol { list-style-type: lower-roman; }
+
+/* tables */
+table {
+    border-collapse: collapse;
+    empty-cells: show;
+    border-spacing: 0;
+    border: 1px solid __border__;
+}
+caption {
+    caption-side: top;
+    text-align: left;
+    margin: 0 0 .3em;
+}
+th,
+td {
+    padding: .3em .5em;
+    margin: 0;
+    vertical-align: top;
+    border: 1px solid __border__;
+    text-align: left;
+}
+th {
+    font-weight: bold;
+    background-color: __background_alt__;
+}
+
+/* links */
+a:link,
+a:link:active,
+a:visited,
+a:visited:active {
+    text-decoration: none;
+    color: __existing__;
+}
+a:link:hover,
+a:link:focus,
+a:link:active,
+a:visited:hover,
+a:visited:focus,
+a:visited:active {
+    text-decoration: none;
+    border-bottom: none;
+}
+a:link:focus,
+a:visited:focus {
+    outline: 1px dotted;
+}
 a {
   border-bottom: 1px dotted #903;
   color: #903;
@@ -176,76 +283,6 @@ a.no-border {
 a.no-border:hover, a.no-border:focus {
   border-bottom: 0;
 }
-li.external-link a:before {
-  color: inherit;
-  content: '\f08e';
-  display: inline-block;
-  float: right;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  width: 10px;
-}
-.navbar li.external-link a:before {
-  margin-top: 4px;
-}
-
-.img-bordered {
-  border: 1px solid #b0b0b0;
-}
-
-.img-rounded {
-  border-radius: 4px;
-}
-
-.img-thumbnail {
-  line-height: 1.44;
-}
-
-hr {
-  border-top: 1px solid #b7b7b7;
-  margin-bottom: 24px;
-  margin-top: 24px;
-}
-
-
-p {
-  font-weight: 200;
-  line-height: 24px;
-  margin: 0 0 24px;
-  max-width: 800px;
-}
-p.text-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.lead {
-  font-size: 20px;
-  font-weight: 200;
-  line-height: 1.4;
-  margin-bottom: 24px;
-  max-width: 1000px;
-}
-@media (min-width: 768px) {
-  .lead {
-    font-size: 24px;
-  }
-}
-
-small,
-.small {
-  font-size: 75%;
-}
-
-mark,
-.mark {
-  background-color: #d3ed5c;
-}
-
-.text-yellow {
-  color: #ffc425;
-}
-
 a.text-yellow:hover {
   color: #f1b000;
 }
@@ -338,56 +375,219 @@ a.bg-danger:hover {
   background-color: #ef6c4e;
 }
 
-.page-header {
-  margin: 0 0 24px;
-  padding-bottom: 11px;
+/* misc */
+img {
+    border-width: 0;
+    vertical-align: middle;
+    color: #666;
+    background-color: transparent;
+    font-style: italic;
 }
-
-ul,
-ol {
-  margin-bottom: 24px;
+hr {
+    border-top: 1px solid #b7b7b7;
+    /*border-style: solid;*/
+    /*border-width: 1px 0 0;*/
+    text-align: center;
+    height: 0;
+    width: 100%;
+    clear: both;
 }
-
-dl {
-  margin-bottom: 24px;
+acronym,
+abbr {
+    cursor: help;
+    border-bottom: 1px dotted;
+    font-style: normal;
 }
-
-dt,
-dd {
-  line-height: 1.44;
+em acronym,
+em abbr,
+i acronym,
+i abbr {
+    font-style: italic;
 }
-
+pre,
+code,
+samp,
+kbd {
+    font-family: Consolas,monospace;
+    /* same font stack should be used for ".dokuwiki table.diff td" and
+       ".dokuwiki textarea.edit" */
+    font-size: 1em;
+    direction: ltr;
+    text-align: left;
+}
+pre {
+    overflow: auto;
+}
+pre,
+code {
+    background-color: transparent !important;
+    font-size: 0.857em; /* 12px (base 14px) */
+}
 blockquote {
-  font-size: 20px;
-  margin: 0 0 24px;
-  padding: 12px 24px;
+    padding: 0 0.75em;
+    border: solid __border__;
+    border-width: 0 0 0 .25em;
 }
-blockquote footer,
-blockquote small,
-blockquote .small {
-  line-height: 1.44;
-}
-
-address {
-  font-weight: 200;
-  line-height: 1.44;
-  margin-bottom: 24px;
-}
-address strong {
-  font-weight: normal;
-}
-
 kbd {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-
 pre {
   font-size: 15px;
   line-height: 1.44;
   margin: 0 0 12px;
   padding: 11.5px;
 }
+q:before,
+q:after {
+    content: '';
+}
+sub,
+sup {
+    font-size: .8em;
+    line-height: 1;
+}
+sub {
+    vertical-align: sub;
+}
+sup {
+    vertical-align: super;
+
+/* forms */
+form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+fieldset {
+    padding: 1em 1em 0;
+    border: 1px solid __text_alt__;
+}
+legend {
+    margin: 0;
+    padding: 0 .1em;
+}
+label {
+    vertical-align: middle;
+    cursor: pointer;
+}
+input,
+textarea,
+button,
+select,
+optgroup,
+option {
+    font: inherit;
+    color: inherit;
+    /* background-color destroys button look */
+    line-height: 1;
+    margin: 0;
+    vertical-align: middle;
+}
+input[type=text],
+input[type=password],
+textarea {
+    padding: .1em;
+}
+input[type=radio],
+input[type=checkbox],
+input.check {
+    padding: 0;
+}
+input[type=submit],
+input.button,
+button {
+    cursor: pointer;
+}
+input[disabled],
+button[disabled],
+input[readonly],
+button[readonly] {
+    cursor: auto;
+}
+optgroup {
+    font-style: italic;
+    font-weight: bold;
+}
+option {
+    font-style: normal;
+    font-weight: normal;
+}
+output {
+  color: #505050;
+  line-height: 1.44;
+}
+
+/* general classes */
+div.clearer {
+    /* additional to what's already in DokuWiki's lib/styles/all.css: */
+    font-size: 1px;
+    visibility: hidden;
+}
+.a11y {
+    position: absolute;
+    left: -9000px;
+    top: -4000px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: inline;
+}
+
+
+
+
+/* #################################################### */
+.navbar li.external-link a:before {
+  margin-top: 4px;
+}
+
+.img-bordered {
+  border: 1px solid #b0b0b0;
+}
+
+.img-rounded {
+  border-radius: 4px;
+}
+
+.img-thumbnail {
+  line-height: 1.44;
+}
+
+
+.lead {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  max-width: 1000px;
+}
+@media (min-width: 768px) {
+  .lead {
+    font-size: 24px;
+  }
+}
+
+small,
+.small {
+  font-size: 75%;
+}
+
+mark,
+.mark {
+  background-color: #d3ed5c;
+}
+
+.text-yellow {
+  color: #ffc425;
+}
+
+
+.page-header {
+  margin: 0 0 24px;
+  padding-bottom: 11px;
+}
+
 
 /* order matters! Gray back before spacing rules! */
 .gray-back {
@@ -840,21 +1040,6 @@ pre {
   font-weight: 200;
 }
 
-legend {
-  font-size: 24px;
-  margin-bottom: 24px;
-}
-
-label {
-  font-size: 14px;
-  font-weight: normal;
-}
-
-output {
-  color: #505050;
-  font-size: 16px;
-  line-height: 1.44;
-}
 
 .form-control {
   -moz-box-shadow: inset 1px 2px 9px rgba(213, 213, 213, 0.5);
