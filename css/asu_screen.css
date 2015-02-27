@@ -49,19 +49,13 @@ html {
 }
 
 body {
-  color: #2a2a2a;
+  color: __text__;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 200;
   line-height: 1.44;
   margin: 0 auto;
 }
-@media (min-width: 1200px) {
-  body {
-    font-size: 18px;
-  }
-}
-
 h1, h1 a,
 h2, h2 a,
 h3, h3 a,
