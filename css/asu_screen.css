@@ -252,7 +252,6 @@ a:link:active,
 a:visited,
 a:visited:active {
     text-decoration: none;
-    color: __existing__;
 }
 a:link:hover,
 a:link:focus,
