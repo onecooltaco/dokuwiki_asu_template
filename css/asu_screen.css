@@ -1,0 +1,41 @@
+/******************************************************************************
+ ********************************  ATTENTION  *********************************
+         DO NOT MODIFY THIS FILE, IT WILL NOT BE PRESERVED ON UPDATES!
+ ******************************************************************************
+  If you want to add some own screen CSS, have a look at the README of this
+  template and "/user/screen.css". You have been warned!
+ *****************************************************************************/
+
+/*
+   This template includes CSS from the "starter" DokuWiki template by
+   Anika Henke (brings important and basic styling for syntax and core
+   features). These files will be included BEFORE this specific CSS file. In
+   this file, I just overwrite non fitting DokuWiki "starter" CSS + add some
+   CSS for some exclusive objects of this template.
+   Why I am doing this? Well, read <http://j.mp/eq8zSo>.
+*/
+
+
+
+/******************************************************************************
+ ******** Most basic styles                                        ************
+ ******** Originally based on starter template's basic.css         ************
+ ******** Have a look at http://j.mp/eq8zSo for more information   ************
+ ******************************************************************************/
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: #2a2a2a;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.44;
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+}
+
